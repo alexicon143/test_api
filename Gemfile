@@ -17,6 +17,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git'
+gem 'rails_email_validator'
+gem 'easy_captcha'
+gem 'rmagick'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

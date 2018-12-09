@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_034556) do
+ActiveRecord::Schema.define(version: 2018_12_09_024030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2018_12_03_034556) do
     t.text "keyfile", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "the_resources", force: :cascade do |t|
+    t.datetime "last_activity_at"
+    t.datetime "expired_at"
+    t.index ["expired_at"], name: "index_the_resources_on_expired_at"
+    t.index ["last_activity_at"], name: "index_the_resources_on_last_activity_at"
   end
 
   create_table "users", force: :cascade do |t|
